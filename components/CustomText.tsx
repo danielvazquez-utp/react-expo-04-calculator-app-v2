@@ -19,9 +19,10 @@ export const CustomText = ({ children, variant, ...rest }:Props) => {
             fontFamily: 'SpaceMono',
             },
             variant === 'h1' && globalStyles.mainResult,
-            variant === 'h1' && globalStyles.subResult,
+            variant === 'h2' && globalStyles.subResult,
         ]}
-        
+        numberOfLines={ 1 }
+        adjustsFontSizeToFit
         { ...rest }
       >
         {  children }
