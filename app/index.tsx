@@ -14,11 +14,7 @@ const CalculatorApp = () => {
                 <CustomText variant='h2'>
                     50 x 20
                 </CustomText>
-                <CustomText
-                    variant='h1'
-                >
-                    Lorem ipsum dolor sit amet 
-                </CustomText>
+                
             </View>
 
             <View style={ globalStyles.row }>
@@ -41,7 +37,7 @@ const CalculatorApp = () => {
                     onPress={() => console.log('del')} 
                 />
                 <CalculatorButton 
-                    label='+' 
+                    label='/' 
                     color={ Colors.orange }
                     onPress={() => console.log('/')} 
                 />
