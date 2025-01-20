@@ -2,7 +2,11 @@
 
 import { Colors } from '@/constants/Colors';
 import { globalStyles } from '@/styles/global-styles';
-import {Pressable, Text } from 'react-native';
+import {Platform, Pressable, Text } from 'react-native';
+
+import * as Haptics from 'expo-haptics';
+
+const isAndroid = Platform.OS === 'android';
 
 interface Props {
     label: string,
@@ -27,7 +31,13 @@ export const CalculatorButton = ({
             opacity: pressed ? 0.8 : 1,
             width: doublesize ? 180: 80,
         }) }
-        onPress={ onPress }
+        onPress={ () => {
+                if(isAndroid){
+                    Haptics.selectionAsync()
+                }
+                onPress();
+            }
+        }
     >
         <Text 
             style={{ 
